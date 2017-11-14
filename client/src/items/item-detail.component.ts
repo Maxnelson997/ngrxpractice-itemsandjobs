@@ -19,13 +19,20 @@ import {Item} from '../common/models/item.model';
               class="mdl-textfield__input" type="text">
           </div>
 
-          <div class="mdl-textfield mdl-js-textfield">
-            <label>Item Description</label>
-            <input [(ngModel)]="selectedItem.description"
-              name="description"
-              placeholder="Enter a description"
-              class="mdl-textfield__input" type="text">
-          </div>
+        <div class="mdl-textfield mdl-js-textfield">
+          <label>Item Description</label>
+          <input [(ngModel)]="selectedItem.description"
+            name="description"
+            placeholder="Enter a description"
+            class="mdl-textfield__input" type="text">
+        </div>
+      <div class="mdl-textfield mdl-js-textfield">
+          <label>Dope Levels</label>
+          <input [(ngModel)]="selectedItem.dopelevels"
+          name="dopelevels"
+          placeholder="Enter a dope level"
+          class="mdl-textfield__input" type="text">
+      </div>
       </form>
     </div>
     <div class="mdl-card__actions">

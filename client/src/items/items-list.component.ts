@@ -12,6 +12,9 @@ import {Item} from '../common/models/item.model';
     <div class="mdl-card__supporting-text">
       {{item.description}}
     </div>
+    <div class="mdl-card__supporting-text">
+      {{item.dopelevels}}
+    </div>
     <div class="mdl-card__menu">
       <button (click)="deleted.emit(item); $event.stopPropagation();"
         class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">

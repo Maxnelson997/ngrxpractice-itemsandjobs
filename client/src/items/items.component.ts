@@ -52,7 +52,7 @@ export class Items {
   }
 
   resetItem() {
-    let emptyItem: Item = {id: null, name: '', description: ''};
+    let emptyItem: Item = {id: null, name: '', description: '', dopelevels: ''};
     this.store.dispatch({type: 'SELECT_ITEM', payload: emptyItem});
   }
 

@@ -15,4 +15,4 @@ export const items = (state: any = [], {type, payload}) => {
     default:
       return state;
   }
-};
+}; 

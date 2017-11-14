@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {AppStore} from '../models/appstore.model';
 import {Gadget} from "../models/gadget.model.ts";
 import {Item} from "../models/item.model";
+import { Job } from '../models/job.model';
 import {Widget} from "../models/widget.model";
 
 import * as Rx from 'rxjs/Rx'; //
@@ -13,15 +14,18 @@ import * as Rx from 'rxjs/Rx'; //
 export class GadgetService {
   gadget: Observable<Gadget>;
   items: Observable<Array<Item>>;
+  jobs: Observable<Array<Job>>;
   widgets: Observable<Array<Widget>>;
 
   constructor(private store: Store<AppStore>) {
     this.gadget = Rx.Observable.combineLatest(
       store.select('items'),
+      store.select('jobs'),
       store.select('widgets'),
-      (items: Item[] = [], widgets: Widget[] = []) => {
+      (items: Item[] = [], jobs: Job[], widgets: Widget[] = []) => {
         return {
           items: [...items],
+          jobs: [...jobs],
           widgets: [...widgets]
         }
       });
